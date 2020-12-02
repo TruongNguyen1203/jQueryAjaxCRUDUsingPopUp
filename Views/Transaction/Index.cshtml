@@ -1,0 +1,14 @@
+﻿@model IEnumerable<JqueryAjaxCRUDPopUp.Models.TransactionModel>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1 class="text-center"><i class="fas fa-comment-dollar text-success"></i>Transaction History</h1>
+<div id="view-all">
+    @await Html.PartialAsync("_ViewAll", Model)
+
+</div>
+
+@section Scripts{
+    <script src="~/js/site.js"></script>
+}

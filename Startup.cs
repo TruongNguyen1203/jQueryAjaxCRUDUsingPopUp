@@ -28,6 +28,7 @@ namespace JqueryAjaxCRUDPopUp
             services.AddControllersWithViews();
             services.AddDbContext<TransactionDbContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("DevConnection")));
+            services.AddControllersWithViews().AddRazorRuntimeCompilation();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -54,7 +55,7 @@ namespace JqueryAjaxCRUDPopUp
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Transaction}/{action=Index}/{id?}");
             });
         }
     }
